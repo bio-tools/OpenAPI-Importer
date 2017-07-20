@@ -1,0 +1,2169 @@
+{
+
+    "swagger": "2.0",
+    "info": {
+        "version": "0.53.1",
+        "title": "Gramene API for release 53"
+    },
+    "basePath": "/v53",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json",
+        "application/xml",
+        "text/plain",
+        "text/tab-separated-values"
+    ],
+    "paths": {
+        "/docs": {
+            "get": {
+                "summary": "Web site describing this API",
+                "tags": [
+                    "API Documentation"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML documentation for this web service, powered by swagger."
+                    }
+                }
+            }
+        },
+        "/swagger": { },
+        "/search": {
+            "get": {
+                "summary": "Gramene Data",
+                "operationId": "genes",
+                "description": "This is the entry point for searching our solr genes core.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fl",
+                        "in": "query",
+                        "description": "List of fields to include in response (default all).",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "wt",
+                        "in": "query",
+                        "description": "response format defaults to 'json'.",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "csv",
+                            "bed"
+                        ],
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "facet.field",
+                        "in": "query",
+                        "description": "Facet field parameters",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fq",
+                        "in": "query",
+                        "description": "Filter query parameters",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "name": "json.facet",
+                        "in": "query",
+                        "description": "Supply all facets as a structured document.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "number of rows to return (default: 20)",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "offset into results list",
+                        "type": "integer",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "Search"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Gene search response object",
+                        "schema": {
+                            "$ref": "#/definitions/SearchResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/suggest": {
+            "get": {
+                "summary": "Genes",
+                "operationId": "suggestions",
+                "description": "This is the entry point for searching our solr genes core.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fq",
+                        "in": "query",
+                        "description": "Filter query parameters",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "number of rows to return (default: 20)",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "offset into results list",
+                        "type": "integer",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "Search"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Suggest response",
+                        "schema": {
+                            "$ref": "#/definitions/SolrSuggestResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/genes": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "genes",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    },
+                    {
+                        "$ref": "#/parameters/bedFeature"
+                    },
+                    {
+                        "$ref": "#/parameters/bedCombiner"
+                    },
+                    {
+                        "$ref": "#/parameters/taxon_id"
+                    },
+                    {
+                        "$ref": "#/parameters/db_type"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/MongoGenesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/genetrees": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "genetrees",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/MongoGenetreesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/maps": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "maps",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/MongoMapsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/domains": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "domains",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/InterProResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/taxonomy": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "taxonomy",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    },
+                    {
+                        "$ref": "#/parameters/subset"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/TaxonomyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/GO": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "GO",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/OntologyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/PO": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "PO",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/OntologyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/pathways": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "pathways",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object",
+                        "schema": {
+                            "$ref": "#/definitions/ReactomeEntityResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/atlas": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "atlas",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object"
+                    }
+                }
+            }
+        },
+        "/expression": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "expression",
+                "description": "Fetch documents from a collection",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object"
+                    }
+                }
+            }
+        },
+        "/{collection}": {
+            "get": {
+                "summary": "MongoDB",
+                "operationId": "get",
+                "description": "Legacy method for backward-compatibility. No schema specified for response document.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/collection"
+                    },
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/rows"
+                    },
+                    {
+                        "$ref": "#/parameters/start"
+                    },
+                    {
+                        "$ref": "#/parameters/fl"
+                    },
+                    {
+                        "$ref": "#/parameters/wt"
+                    },
+                    {
+                        "$ref": "#/parameters/idList"
+                    }
+                ],
+                "tags": [
+                    "Data access"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MongoDB response object"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ResponseHeader": {
+            "required": [
+                "status",
+                "QTime",
+                "params"
+            ],
+            "properties": {
+                "status": {
+                    "type": "integer"
+                },
+                "QTime": {
+                    "type": "integer"
+                },
+                "params": {
+                    "type": "object"
+                }
+            }
+        },
+        "Suggestion": {
+            "required": [
+                "category",
+                "id",
+                "fq_field",
+                "fq_value",
+                "display_name",
+                "num_genes",
+                "score",
+                "taxon_id",
+                "taxon_freq"
+            ],
+            "properties": {
+                "category": {
+                    "type": "string"
+                },
+                "fq_field": {
+                    "type": "string"
+                },
+                "fq_value": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "display_name": {
+                    "type": "string"
+                },
+                "num_genes": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "score": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "taxon_id": {
+                    "$ref": "#/definitions/int_id_list"
+                },
+                "taxon_freq": {
+                    "$ref": "#/definitions/int_id_list"
+                }
+            }
+        },
+        "Suggestions": {
+            "required": [
+                "docs",
+                "maxScore",
+                "numFound",
+                "start"
+            ],
+            "properties": {
+                "docs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Suggestion"
+                    }
+                },
+                "maxScore": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "numFound": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "start": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            }
+        },
+        "SuggestionType": {
+            "required": [
+                "groupValue",
+                "doclist"
+            ],
+            "properties": {
+                "groupValue": {
+                    "type": "string"
+                },
+                "doclist": {
+                    "$ref": "#/definitions/Suggestions"
+                }
+            }
+        },
+        "Category": {
+            "type": "object",
+            "required": [
+                "matches",
+                "groups"
+            ],
+            "properties": {
+                "matches": {
+                    "type": "integer"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SuggestionType"
+                    }
+                }
+            }
+        },
+        "GroupedBy": {
+            "required": [
+                "category"
+            ],
+            "properties": {
+                "category": {
+                    "$ref": "#/definitions/Category"
+                }
+            }
+        },
+        "SolrSuggestResponse": {
+            "required": [
+                "responseHeader",
+                "grouped"
+            ],
+            "properties": {
+                "responseHeader": {
+                    "$ref": "#/definitions/ResponseHeader"
+                },
+                "grouped": {
+                    "$ref": "#/definitions/GroupedBy"
+                }
+            }
+        },
+        "Result": {
+            "required": [
+                "id",
+                "name",
+                "description",
+                "taxon_id",
+                "biotype",
+                "score",
+                "capabilities"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "taxon_id": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "score": {
+                    "type": "number"
+                },
+                "closest_rep_id": {
+                    "type": "string"
+                },
+                "closest_rep_name": {
+                    "type": "string"
+                },
+                "closest_rep_taxon_id": {
+                    "type": "integer"
+                },
+                "closest_rep_description": {
+                    "type": "string"
+                },
+                "model_rep_id": {
+                    "type": "string"
+                },
+                "model_rep_name": {
+                    "type": "string"
+                },
+                "model_rep_taxon_id": {
+                    "type": "integer"
+                },
+                "model_rep_description": {
+                    "type": "string"
+                },
+                "capabilities": {
+                    "$ref": "#/definitions/capabilities"
+                },
+                "biotype": {
+                    "type": "string",
+                    "enum": [
+                        "protein_coding",
+                        "miRNA",
+                        "ncRNA",
+                        "low_confidence",
+                        "transposable_element",
+                        "snoRNA",
+                        "tRNA",
+                        "misc_RNA",
+                        "undefined",
+                        "pseudogene",
+                        "tRNA_pseudogene",
+                        "nontranslating_CDS",
+                        "snRNA",
+                        "rRNA",
+                        "antisense",
+                        "SRP_RNA",
+                        "tmRNA",
+                        "ribozyme",
+                        "RNase_MRP_RNA",
+                        "telomerase_RNA",
+                        "P_RNA",
+                        "RNase_P_RNA",
+                        "vault_RNA"
+                    ]
+                }
+            }
+        },
+        "SolrFacetDocument": {
+            "required": [
+                "facet_fields"
+            ],
+            "properties": {
+                "facet_fields": {
+                    "type": "object"
+                }
+            }
+        },
+        "Results": {
+            "required": [
+                "start",
+                "maxScore",
+                "numFound"
+            ],
+            "properties": {
+                "numFound": {
+                    "type": "integer"
+                },
+                "start": {
+                    "type": "integer"
+                },
+                "maxScore": {
+                    "type": "integer"
+                },
+                "docs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Result"
+                    }
+                }
+            }
+        },
+        "SearchResponse": {
+            "required": [
+                "responseHeader",
+                "response"
+            ],
+            "properties": {
+                "responseHeader": {
+                    "$ref": "#/definitions/ResponseHeader"
+                },
+                "response": {
+                    "$ref": "#/definitions/Results"
+                },
+                "facet_counts": {
+                    "$ref": "#/definitions/SolrFacetDocument"
+                }
+            }
+        },
+        "GeneDocument": {
+            "required": [
+                "_id",
+                "name",
+                "description",
+                "taxon_id",
+                "system_name",
+                "biotype",
+                "db_type",
+                "gene_idx",
+                "species_idx",
+                "location",
+                "gene_structure",
+                "annotations",
+                "bins"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "db_type": {
+                    "type": "string"
+                },
+                "synonyms": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "taxon_id": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "gene_idx": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "species_idx": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "system_name": {
+                    "type": "string"
+                },
+                "biotype": {
+                    "type": "string",
+                    "enum": [
+                        "protein_coding",
+                        "miRNA",
+                        "ncRNA",
+                        "low_confidence",
+                        "transposable_element",
+                        "snoRNA",
+                        "tRNA",
+                        "misc_RNA",
+                        "undefined",
+                        "pseudogene",
+                        "tRNA_pseudogene",
+                        "nontranslating_CDS",
+                        "snRNA",
+                        "rRNA",
+                        "antisense",
+                        "SRP_RNA",
+                        "tmRNA",
+                        "ribozyme",
+                        "RNase_MRP_RNA",
+                        "telomerase_RNA",
+                        "P_RNA",
+                        "RNase_P_RNA",
+                        "vault_RNA"
+                    ]
+                },
+                "gene_structure": {
+                    "$ref": "#/definitions/GeneStructure"
+                },
+                "annotations": {
+                    "$ref": "#/definitions/GeneAnnotations"
+                },
+                "bins": {
+                    "$ref": "#/definitions/GeneBins"
+                },
+                "homology": {
+                    "$ref": "#/definitions/GeneHomology"
+                },
+                "location": {
+                    "$ref": "#/definitions/GeneLocation"
+                },
+                "xrefs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GeneXref"
+                    }
+                }
+            }
+        },
+        "GeneAnnotations": {
+            "properties": {
+                "GO": {
+                    "properties": {
+                        "entries": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/OntologyAnnotations"
+                            }
+                        },
+                        "ancestors": {
+                            "$ref": "#/definitions/int_id_list"
+                        }
+                    }
+                },
+                "PO": {
+                    "properties": {
+                        "entries": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/OntologyAnnotations"
+                            }
+                        },
+                        "ancestors": {
+                            "$ref": "#/definitions/int_id_list"
+                        }
+                    }
+                },
+                "domains": {
+                    "properties": {
+                        "entries": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/DomainAnnotations"
+                            }
+                        },
+                        "ancestors": {
+                            "$ref": "#/definitions/int_id_list"
+                        }
+                    }
+                },
+                "taxonomy": {
+                    "properties": {
+                        "entries": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/TaxonomyAnnotations"
+                            }
+                        },
+                        "ancestors": {
+                            "$ref": "#/definitions/int_id_list"
+                        }
+                    }
+                },
+                "pathways": {
+                    "properties": {
+                        "entries": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/PathwayAnnotations"
+                            }
+                        },
+                        "ancestors": {
+                            "$ref": "#/definitions/int_id_list"
+                        }
+                    }
+                }
+            }
+        },
+        "OntologyAnnotations": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "def": {
+                    "type": "string"
+                },
+                "subset": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "evidence_code": {
+                    "type": "string"
+                }
+            }
+        },
+        "DomainAnnotations": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "TaxonomyAnnotations": {
+            "properties": {
+                "_id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "PathwayAnnotations": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "GeneBins": {
+            "required": [
+                "fixed_100",
+                "fixed_200",
+                "fixed_500",
+                "fixed_1000",
+                "uniform_1Mb",
+                "uniform_2Mb",
+                "uniform_5Mb",
+                "uniform_10Mb"
+            ],
+            "properties": {
+                "fixed_100": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "fixed_200": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "fixed_500": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "fixed_1000": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "uniform_1Mb": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "uniform_2Mb": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "uniform_5Mb": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "uniform_10Mb": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            }
+        },
+        "GeneStructure": {
+            "required": [
+                "exons",
+                "transcripts",
+                "canonical_transcript"
+            ],
+            "properties": {
+                "exons": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GeneExon"
+                    }
+                },
+                "transcripts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GeneTranscript"
+                    }
+                },
+                "canonical_transcript": {
+                    "type": "string"
+                }
+            }
+        },
+        "GeneExon": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/int_range"
+                },
+                {
+                    "required": [
+                        "id"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "GeneTranscript": {
+            "required": [
+                "id",
+                "exons",
+                "exon_junctions",
+                "length"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "cds": {
+                    "$ref": "#/definitions/int_range"
+                },
+                "exons": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "exon_junctions": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 0
+                    }
+                },
+                "length": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "translation": {
+                    "$ref": "#/definitions/GeneTranslation"
+                }
+            }
+        },
+        "GeneTranslation": {
+            "required": [
+                "id",
+                "length"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "length": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "features": {
+                    "$ref": "#/definitions/TranslationFeatures"
+                }
+            }
+        },
+        "TranslationFeatures": {
+            "properties": {
+                "active_site": {
+                    "$ref": "#/definitions/InterProType"
+                },
+                "binding_site": {
+                    "$ref": "#/definitions/InterProType"
+                },
+                "conserved_site": {
+                    "$ref": "#/definitions/InterProType"
+                },
+                "domain": {
+                    "$ref": "#/definitions/InterProDomain"
+                },
+                "repeat": {
+                    "$ref": "#/definitions/InterProType"
+                },
+                "family": {
+                    "$ref": "#/definitions/InterProType"
+                },
+                "ptm": {
+                    "$ref": "#/definitions/InterProType"
+                }
+            }
+        },
+        "InterProType": {
+            "properties": {
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DomainInstance"
+                    }
+                }
+            }
+        },
+        "InterProDomain": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/InterProType"
+                },
+                {
+                    "properties": {
+                        "roots": {
+                            "type": "string"
+                        },
+                        "architecture": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/DomainInstance"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "DomainInstance": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/int_range"
+                },
+                {
+                    "required": [
+                        "name",
+                        "description",
+                        "db",
+                        "interpro"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "db": {
+                            "type": "string"
+                        },
+                        "interpro": {
+                            "type": "string"
+                        },
+                        "root": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "GeneHomology": {
+            "properties": {
+                "gene_tree": {
+                    "$ref": "#/definitions/GeneTree"
+                },
+                "pan_tree": {
+                    "$ref": "#/definitions/GeneTree"
+                },
+                "homologous_genes": {
+                    "$ref": "#/definitions/HomologyTypes"
+                }
+            }
+        },
+        "HomologyTypes": {
+            "properties": {
+                "ortholog_one2one": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "ortholog_one2many": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "ortholog_many2many": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "within_species_paralog": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "other_paralog": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "gene_split": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "between_species_paralog": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "alt_allele": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "homoeolog_one2one": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "homoeolog_one2many": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "homoeolog_many2many": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "syntenic_ortholog_one2one": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "syntenic_ortholog_one2many": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "syntenic_ortholog_many2many": {
+                    "$ref": "#/definitions/string_list"
+                },
+                "syntenic_between_species_paralog": {
+                    "$ref": "#/definitions/string_list"
+                }
+            }
+        },
+        "GeneTree": {
+            "required": [
+                "id",
+                "root_taxon_id",
+                "root_taxon_name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "root_taxon_id": {
+                    "type": "integer"
+                },
+                "root_taxon_name": {
+                    "type": "string"
+                },
+                "representative": {
+                    "properties": {
+                        "closest": {
+                            "$ref": "#/definitions/GeneTreeRepresentative"
+                        },
+                        "model": {
+                            "$ref": "#/definitions/GeneTreeRepresentative"
+                        }
+                    }
+                }
+            }
+        },
+        "GeneTreeRepresentative": {
+            "required": [
+                "id",
+                "taxon_id",
+                "name",
+                "description"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "taxon_id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "GeneLocation": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/int_range"
+                },
+                {
+                    "required": [
+                        "map",
+                        "region",
+                        "strand"
+                    ],
+                    "properties": {
+                        "map": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        },
+                        "strand": {
+                            "type": "integer",
+                            "enum": [
+                                1,
+                                -1
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "GeneXref": {
+            "required": [
+                "db",
+                "ids"
+            ],
+            "properties": {
+                "db": {
+                    "type": "string"
+                },
+                "ids": {
+                    "$ref": "#/definitions/string_list"
+                }
+            }
+        },
+        "MongoGenesResponse": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/GeneDocument"
+            }
+        },
+        "capabilities": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "homology",
+                    "xrefs",
+                    "GO",
+                    "domains",
+                    "taxonomy",
+                    "PO",
+                    "pathways",
+                    "location",
+                    "expression"
+                ]
+            }
+        },
+        "int_range": {
+            "required": [
+                "start",
+                "end"
+            ],
+            "properties": {
+                "start": {
+                    "type": "integer"
+                },
+                "end": {
+                    "type": "integer"
+                }
+            }
+        },
+        "string_list": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "int_id_list": {
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "minimum": 0
+            }
+        },
+        "MongoGenetreesResponse": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/GenetreeRootNode"
+            }
+        },
+        "GenetreeRootNode": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/GenetreeNode"
+                },
+                {
+                    "required": [
+                        "root_id",
+                        "tree_id",
+                        "tree_stable_id",
+                        "tree_type"
+                    ],
+                    "properties": {
+                        "root_id": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "tree_id": {
+                            "type": "string"
+                        },
+                        "tree_stable_id": {
+                            "type": "string"
+                        },
+                        "tree_type": {
+                            "type": "string",
+                            "enum": [
+                                "tree",
+                                "supertree"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "GenetreeNode": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/GenetreeInternalNode"
+                },
+                {
+                    "$ref": "#/definitions/GenetreeLeafNode"
+                },
+                {
+                    "required": [
+                        "node_id",
+                        "distance_to_parent",
+                        "left_index",
+                        "right_index",
+                        "taxon_id",
+                        "taxon_name"
+                    ],
+                    "properties": {
+                        "node_id": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "distance_to_parent": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "left_index": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "right_index": {
+                            "type": "integer"
+                        },
+                        "taxon_id": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "taxon_name": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    }
+                }
+            ]
+        },
+        "GenetreeInternalNode": {
+            "properties": {
+                "node_type": {
+                    "type": "string",
+                    "enum": [
+                        "duplication",
+                        "speciation",
+                        "dubious",
+                        "gene_split"
+                    ]
+                },
+                "bootstrap": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "duplication_confidence_score": {
+                    "type": "number"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GenetreeNode"
+                    }
+                }
+            }
+        },
+        "GenetreeLeafNode": {
+            "properties": {
+                "protein_stable_id": {
+                    "type": "string"
+                },
+                "gene_stable_id": {
+                    "type": "string"
+                },
+                "gene_description": {
+                    "type": "string"
+                },
+                "cigar": {
+                    "type": "string"
+                },
+                "sequence": {
+                    "type": "string"
+                },
+                "assembly": {
+                    "type": "string"
+                },
+                "representative": {
+                    "required": [
+                        "id",
+                        "score"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "score": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "MongoMapsResponse": {
+            "required": [
+                "_id",
+                "db",
+                "taxon_id",
+                "system_name",
+                "type",
+                "length",
+                "regions",
+                "num_genes"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "db": {
+                    "type": "string"
+                },
+                "taxon_id": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "system_name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "genome"
+                    ]
+                },
+                "length": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "regions": {
+                    "$ref": "#/definitions/Region"
+                },
+                "num_genes": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            }
+        },
+        "Region": {
+            "required": [
+                "names",
+                "lengths"
+            ],
+            "properties": {
+                "names": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "lengths": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        "Term": {
+            "required": [
+                "_id",
+                "id",
+                "name",
+                "ancestors"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "ancestors": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "InterProResponse": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/InterProDoc"
+            }
+        },
+        "TaxonomyResponse": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Taxon"
+            }
+        },
+        "OntologyResponse": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/OntologyTerm"
+            }
+        },
+        "ReactomeEntityResponse": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/ReactomeEntity"
+            }
+        },
+        "InterProDoc": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Term"
+                },
+                {
+                    "required": [
+                        "parents",
+                        "type",
+                        "description",
+                        "abstract",
+                        "PFAM",
+                        "PROFILE",
+                        "SMART",
+                        "PANDIT",
+                        "MSDsite",
+                        "BLOCKS",
+                        "PROSITEDOC",
+                        "PDB",
+                        "CATH",
+                        "SCOP"
+                    ],
+                    "properties": {
+                        "parents": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "abstract": {
+                            "type": "string"
+                        },
+                        "PFAM": {
+                            "type": "string"
+                        },
+                        "PROFILE": {
+                            "type": "string"
+                        },
+                        "SMART": {
+                            "type": "string"
+                        },
+                        "PANDIT": {
+                            "type": "string"
+                        },
+                        "MSDsite": {
+                            "type": "string"
+                        },
+                        "BLOCKS": {
+                            "type": "string"
+                        },
+                        "PROSITEDOC": {
+                            "type": "string"
+                        },
+                        "PDB": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "CATH": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "SCOP": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "Taxon": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Term"
+                },
+                {
+                    "required": [
+                        "xref",
+                        "synonym",
+                        "namespace"
+                    ],
+                    "properties": {
+                        "namespace": {
+                            "type": "string"
+                        },
+                        "synonym": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "xref": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "OntologyTerm": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Term"
+                },
+                {
+                    "required": [
+                        "synonym",
+                        "is_a",
+                        "namespace",
+                        "def",
+                        "comment"
+                    ],
+                    "properties": {
+                        "synonym": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "is_a": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "namespace": {
+                            "type": "string"
+                        },
+                        "def": {
+                            "type": "string"
+                        },
+                        "relationship": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "subset": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "is_obsolete": {
+                            "type": "string",
+                            "enum": [
+                                "1"
+                            ]
+                        },
+                        "consider": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "comment": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "ReactomeEntity": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Term"
+                },
+                {
+                    "required": [
+                        "lineage",
+                        "type",
+                        "parents",
+                        "synonyms"
+                    ],
+                    "properties": {
+                        "lineage": {
+                            "type": "array",
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer"
+                                }
+                            }
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "parents": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "synonyms": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "parameters": {
+        "q": {
+            "name": "q",
+            "in": "query",
+            "description": "string for free text search",
+            "type": "string",
+            "required": false
+        },
+        "rows": {
+            "name": "rows",
+            "in": "query",
+            "description": "number of rows to return (default: 20)",
+            "type": "integer",
+            "required": false
+        },
+        "start": {
+            "name": "start",
+            "in": "query",
+            "description": "offset into results list",
+            "type": "integer",
+            "required": false
+        },
+        "fl": {
+            "name": "fl",
+            "in": "query",
+            "description": "list of fields to return",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "required": false
+        },
+        "wt": {
+            "name": "wt",
+            "in": "query",
+            "description": "response format, if `tab` is specified `fl` must also be, otherwise JSON documents returned.",
+            "enum": [
+                "json",
+                "tab",
+                "bed"
+            ],
+            "type": "string",
+            "required": false
+        },
+        "bedFeature": {
+            "name": "bedFeature",
+            "in": "query",
+            "description": "type of feature to export",
+            "type": "string",
+            "required": false,
+            "default": "gene",
+            "enum": [
+                "gene",
+                "transcript",
+                "exon",
+                "intron",
+                "CDS",
+                "utr5",
+                "utr3"
+            ]
+        },
+        "bedCombiner": {
+            "name": "bedCombiner",
+            "in": "query",
+            "description": "method for extracting features from multiple transcripts",
+            "type": "string",
+            "required": false,
+            "default": "canonical",
+            "enum": [
+                "canonical",
+                "all"
+            ]
+        },
+        "taxon_id": {
+            "name": "taxon_id",
+            "in": "query",
+            "description": "NCBI taxonomy id",
+            "type": "integer",
+            "required": false
+        },
+        "db_type": {
+            "name": "db_type",
+            "in": "query",
+            "description": "set to core if you don't care about otherfeatures",
+            "type": "string",
+            "required": false,
+            "enum": [
+                "core",
+                "otherfeatures"
+            ]
+        },
+        "idList": {
+            "name": "idList",
+            "in": "query",
+            "description": "a comma separated list of document ids",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "required": false
+        },
+        "subset": {
+            "name": "subset",
+            "in": "query",
+            "description": "subset of NCBI taxonomy",
+            "required": false,
+            "type": "string",
+            "enum": [
+                "gramene",
+                "compara",
+                "pan_compara"
+            ]
+        },
+        "collection": {
+            "name": "collection",
+            "in": "path",
+            "description": "name of collection",
+            "enum": [
+                "genes",
+                "genetrees",
+                "maps",
+                "domains",
+                "taxonomy",
+                "GO",
+                "PO",
+                "expression",
+                "atlas"
+            ],
+            "type": "string",
+            "required": true
+        }
+    }
+
+}
