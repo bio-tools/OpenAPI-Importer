@@ -1,30 +1,23 @@
 {
-	"pEnd": "null",
-	"dbtype": "null",
-	"gend": "null",
-	"upid": {
+	"sourceSystemCode": {
 		"term": "identifier",	
 		"uri": "http://edamontology.org/data_0842"
 	},
-	"terms": {
+	"systemCode": {
 		"term": "identifier",	
 		"uri": "http://edamontology.org/data_0842"
 	},
-	"accession": {
+	"query": "null",
+	"targetSystemCode": {
 		"term": "identifier",	
 		"uri": "http://edamontology.org/data_0842"
 	},
-	"gstart": "null",
-	"pStart": "null",
-	"dbid": {
+	"identifier":  {
 		"term": "identifier",	
 		"uri": "http://edamontology.org/data_0842"
 	},
-	"taxonomy": {
-		"term": "identifier",	
-		"uri": "http://edamontology.org/data_0842"
-	},
-	"chromosome": "null",
-	"type": "null",
-	"pPosition": "null"
+	"organism":  {
+		"term": "Species name",	
+		"uri": "http://edamontology.org/data_1045"
+	}
 }

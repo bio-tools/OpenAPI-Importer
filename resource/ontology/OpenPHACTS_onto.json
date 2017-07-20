@@ -3,9 +3,15 @@
 	"searchOptions.Molecule": "null",
 	"q": "null",
 	"uri_list": "null",
-	"app_id": "null",
+	"app_id": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
 	"app_key": "null",
-	"uuid": "null",
+	"uuid": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
 	"uri": "null",
 	"searchOptions.SimilarityType": "null",
 	"searchOptions.Threshold": "null",

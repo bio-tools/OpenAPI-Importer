@@ -1,0 +1,1451 @@
+{
+
+    "swagger": "2.0",
+    "info": {
+        "title": "WikiPathways Webservices",
+        "version": "1.0"
+    },
+    "host": "webservice.wikipathways.org",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "paths": {
+        "/listOrganisms": {
+            "get": {
+                "description": "listOrganisms",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Organism list",
+                    "All functions"
+                ]
+            }
+        },
+        "/listPathways": {
+            "get": {
+                "description": "listPathways",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The organism to filter by (optional)"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Pathway list",
+                    "All functions"
+                ]
+            }
+        },
+        "/getPathway": {
+            "get": {
+                "description": "getPathway",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "revision",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer",
+                        "description": "The revision number of the pathway (use 0 for most recent)"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Pathway information",
+                    "All functions"
+                ]
+            }
+        },
+        "/getPathwayInfo": {
+            "get": {
+                "description": "getPathwayInfoGet some general info about the pathway, such as the name, species, without downloading the GPML.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Pathway information",
+                    "All functions"
+                ]
+            }
+        },
+        "/getPathwayHistory": {
+            "get": {
+                "description": "getPathwayHistoryGet the revision history of a pathway.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "timestamp",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "Limit by time, only history items after the given"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "History",
+                    "All functions"
+                ]
+            }
+        },
+        "/getRecentChanges": {
+            "get": {
+                "description": "getRecentChangesGet the recently changed pathways.<br>Note: the recent changes table only retains items for a limited time (2 months), so there is no guarantee that you will get all changes when the timestamp points to a date that is more than 2 months in the past.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "timestamp",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "Get the changes after this time"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "History",
+                    "All functions"
+                ]
+            }
+        },
+        "/login": {
+            "get": {
+                "description": "loginStart a logged in session, using an existing WikiPathways account. This function will return an authentication code that can be used to excecute methods that need authentication (e.g. updatePathway).",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The usernameset_include_path(get_include_path().PATH_SEPARATOR.realpath('../includes').PATH_SEPARATOR.realpath('../').PATH_SEPARATOR);"
+                    },
+                    {
+                        "name": "pass",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The password"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "User management",
+                    "All functions"
+                ]
+            }
+        },
+        "/getPathwayAs": {
+            "get": {
+                "description": "getPathwayAsDownload a pathway in the specified file format.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "fileType",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The file type to convert to, e.g."
+                    },
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "revision",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer",
+                        "description": "The revision number of the pathway (use 0 for most recent)"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Download",
+                    "All functions"
+                ]
+            }
+        },
+        "/updatePathway": {
+            "get": {
+                "description": "updatePathwayUpdate a pathway on the wiki with the given GPML code.<br>Note: To create/modify pathways via the web service, you need to have an account with web service write permissions. Please contact us to request write access for the web service.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "description",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "A description of the modifications"
+                    },
+                    {
+                        "name": "gpml",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The updated GPML code"
+                    },
+                    {
+                        "name": "revision",
+                        "required": true,
+                        "in": "query",
+                        "type": "integer",
+                        "description": "The revision the GPML code is based on"
+                    },
+                    {
+                        "name": "auth",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The authentication key"
+                    },
+                    {
+                        "name": "username",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The username"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Write (create/update/delete)",
+                    "All functions"
+                ]
+            }
+        },
+        "/createPathway": {
+            "post": {
+                "description": "createPathwayCreate a new pathway on the wiki with the given GPML code.<br>Note: To create/modify pathways via the web service, you need to have an account with web service write permissions. Please contact us to request write access for the web service.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "gpml",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The GPML code for the new pathway"
+                    },
+                    {
+                        "name": "auth",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The authentication info"
+                    },
+                    {
+                        "name": "username",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The user name"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Write (create/update/delete)"
+                ]
+            }
+        },
+        "/findPathwaysByText": {
+            "get": {
+                "description": "findPathwaysByText",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The query, e.g. 'apoptosis'"
+                    },
+                    {
+                        "name": "species",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "description": "Optional, limit the query by species. Leave"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Search"
+                ]
+            }
+        },
+        "/findPathwaysByXref": {
+            "get": {
+                "description": "findPathwaysByXref",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "required": true,
+                        "in": "query",
+                        "type": "array",
+                        "description": "string"
+                    },
+                    {
+                        "name": "codes",
+                        "required": false,
+                        "in": "query",
+                        "type": "array",
+                        "description": "string"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Search"
+                ]
+            }
+        },
+        "/removeCurationTag": {
+            "get": {
+                "description": "removeCurationTagRemove a curation tag from a pathway.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "tagName",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The name of the tag to apply"
+                    },
+                    {
+                        "name": "auth",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The authentication data"
+                    },
+                    {
+                        "name": "username",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The user name"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Search"
+                ]
+            }
+        },
+        "/saveCurationTag": {
+            "get": {
+                "description": "saveCurationTag",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "tagName",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The name of the tag to apply"
+                    },
+                    {
+                        "name": "text",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "string"
+                    },
+                    {
+                        "name": "revision",
+                        "required": true,
+                        "in": "query",
+                        "type": "integer",
+                        "description": "The revision this tag applies to"
+                    },
+                    {
+                        "name": "auth",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The authentication key"
+                    },
+                    {
+                        "name": "username",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The user name"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Write (create/update/delete)",
+                    "Curation tags"
+                ]
+            }
+        },
+        "/getCurationTags": {
+            "get": {
+                "description": "getCurationTagsGet all curation tags for the given tag name. Use this method if you want to find all pathways that are tagged with a specific curation tag.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Pathway information",
+                    "Curation tags"
+                ]
+            }
+        },
+        "/getCurationTagsByName": {
+            "get": {
+                "description": "getCurationTagsByNameGet all curation tags for the given tag name. Use this method if you want to find all pathways that are tagged with a specific curation tag.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "tagName",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The tag name"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Pathway list",
+                    "Curation tags"
+                ]
+            }
+        },
+        "/getCurationTagHistory": {
+            "get": {
+                "description": "getCurationTagHistory",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "timestamp",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "description": "Only include history from after the given date"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "History",
+                    "Curation tags"
+                ]
+            }
+        },
+        "/getColoredPathway": {
+            "get": {
+                "description": "getColoredPathwayGet a colored image version of the pathway.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "revision",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The revision of the pathway (use '0' for most recent)"
+                    },
+                    {
+                        "name": "graphId",
+                        "required": true,
+                        "in": "query",
+                        "type": "array",
+                        "description": "string"
+                    },
+                    {
+                        "name": "color",
+                        "required": true,
+                        "in": "query",
+                        "type": "array",
+                        "description": "string"
+                    },
+                    {
+                        "name": "fileType",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The image type (One of 'svg', 'pdf' or 'png')."
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "All functions",
+                    "Download"
+                ]
+            }
+        },
+        "/findInteractions": {
+            "get": {
+                "description": "findInteractionsFind interactions defined in WikiPathways pathways.",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The name of an entity to find interactions for (e.g. 'P53')"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Search",
+                    "All functions"
+                ]
+            }
+        },
+        "/getXrefList": {
+            "get": {
+                "description": "getXrefList",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier."
+                    },
+                    {
+                        "name": "code",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The database code to translate to (e.g. 'S' for UniProt)."
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Download",
+                    "All functions"
+                ]
+            }
+        },
+        "/findPathwaysByLiterature": {
+            "get": {
+                "description": "findPathwaysByLiterature",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The query, can be a pubmed id, author name or title keyword."
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Search",
+                    "All functions"
+                ]
+            }
+        },
+        "/saveOntologyTag": {
+            "get": {
+                "description": "saveOntologyTag",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "term",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The ontology term to apply"
+                    },
+                    {
+                        "name": "termId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The identifier of the term in the ontology"
+                    },
+                    {
+                        "name": "auth",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The authentication key"
+                    },
+                    {
+                        "name": "user",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The username"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Write (create/update/delete)",
+                    "Ontology tags",
+                    "All functions"
+                ]
+            }
+        },
+        "/removeOntologyTag": {
+            "get": {
+                "description": "removeOntologyTag",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "termId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The ontology term identifier in the ontology"
+                    },
+                    {
+                        "name": "auth",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The authentication key"
+                    },
+                    {
+                        "name": "user",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The username"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Write (create/update/delete)",
+                    "Ontology tags",
+                    "All functions"
+                ]
+            }
+        },
+        "/getOntologyTermsByPathway": {
+            "get": {
+                "description": "getOntologyTermsByPathway",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "pwId",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The pathway identifier"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Pathway information",
+                    "Curation tags",
+                    "All functions"
+                ]
+            }
+        },
+        "/getPathwaysByOntologyTerm": {
+            "get": {
+                "description": "getPathwaysByOntologyTerm",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "term",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The Ontology term"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Pathway list",
+                    "Ontology tags",
+                    "All functions"
+                ]
+            }
+        },
+        "/getPathwaysByParentOntologyTerm": {
+            "get": {
+                "description": "getPathwaysByParentOntologyTerm",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "term",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "The Ontology term"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "Pathway list",
+                    "Ontology tags",
+                    "All functions"
+                ]
+            }
+        },
+        "/getUserByOrcid": {
+            "get": {
+                "description": "getUserByOrcid",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/html",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "orcid",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "string"
+                    },
+                    {
+                        "name": "format",
+                        "required": false,
+                        "in": "query",
+                        "type": "string",
+                        "default": "xml",
+                        "enum": [
+                            "json",
+                            "xml",
+                            "html",
+                            "dump",
+                            "jpg",
+                            "pdf"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "everything ok"
+                    }
+                },
+                "tags": [
+                    "User management",
+                    "All functions"
+                ]
+            }
+        }
+    }
+
+}
