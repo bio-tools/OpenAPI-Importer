@@ -1,0 +1,2034 @@
+{
+	"topic": [
+		{
+			"term": "Bioinformatics",
+			"uri": "http:\/\/edamontology.org\/topic_0091"
+		},
+		{
+			"term": "Bioinformatics",
+			"uri": "http:\/\/edamontology.org\/topic_0091"
+		}
+	],
+	"function": [
+		{
+			"handle": "archive\/Identifier\/{Identifier}",
+			"comment": "Uses the given id to return the archived sequence.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "genetree\/Identifier\/{Identifier}",
+			"comment": "Retrieves a gene tree for a gene tree stable id",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "genetree\/member\/Identifier\/{Identifier}",
+			"comment": "Retrieves the gene tree that contains the gene \/ transcript \/ translation stable id",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "genetree\/member\/symbol\/{species}\/{symbol}",
+			"comment": "Retrieves the gene tree that contains the gene Identifierentified by a symbol",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "GENE SYMBOL",
+						"uri": "http:\/\/edamontology.org\/data_1026"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "alignment\/region\/{species}\/{region}",
+			"comment": "Retrieves genomic alignments as separate blocks based on a region and species",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "homology\/Identifier\/{Identifier}",
+			"comment": "Retrieves genomic alignments as separate blocks based on a region and species",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "homology\/symbol\/{species}\/{symbol}",
+			"comment": "Retrieves genomic alignments as separate blocks based on a region and species",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "GENE SYMBOL",
+						"uri": "http:\/\/edamontology.org\/data_1026"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "xrefs\/Identifier\/{Identifier}",
+			"comment": "Perform lookups of Ensembl ids and retrieve their external references in other databases",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "xrefs\/symbol\/{species}\/{symbol}",
+			"comment": "Looks up an external symbol and returns all Ensembl objects linked to it. This can be a display name for a gene\/transcript\/translation, a synonym or an externally linked reference. If a gene's transcript is linked to the supplied symbol the service will return both gene and transcript (it supports transient links).",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "GENE SYMBOL",
+						"uri": "http:\/\/edamontology.org\/data_1026"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "xrefs\/name\/{species}\/{name}",
+			"comment": "Performs a lookup based upon the primary accession or display label of an external reference and returning the information we hold about the entry.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "NAME",
+						"uri": "http:\/\/edamontology.org\/data_2099"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "eqtl\/Identifier\/{species}\/{stable_Identifier}",
+			"comment": "Returns the p-value for each SNP in a given gene (e.g. ENSG00000227232)",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "ENSEMBL GENE Identifier",
+						"uri": "http:\/\/edamontology.org\/data_1033"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "eqtl\/variant_name\/{species}\/{variant_name}",
+			"comment": "Returns the p-values for a SNP (e.g. rs123)",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "NAME",
+						"uri": "http:\/\/edamontology.org\/data_2099"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "eqtl\/tissue\/{species}",
+			"comment": "Returns all tissues currently available in the DB",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/analysis\/{species}",
+			"comment": "List the names of analyses involved in generating Ensembl data.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/assembly\/{species}",
+			"comment": "List the currently available assemblies for a species, along with toplevel sequences, chromosomes and cytogenetic bands.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/assembly\/{species}\/{region_name}",
+			"comment": "Returns information about the specified toplevel sequence region for the given species.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "NAME",
+						"uri": "http:\/\/edamontology.org\/data_2099"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/biotypes\/{species}",
+			"comment": "List the functional classifications of gene models that Ensembl associates with a particular species. Useful for restricting the type of genes\/transcripts retrieved by other endpoints.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/compara\/methods",
+			"comment": "List all compara analyses available (an analysis defines the type of comparative data).",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/compara\/species_sets\/{method}",
+			"comment": "List all collections of species analysed with the specified compara method.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/comparas",
+			"comment": "Lists all available comparative genomics databases and their data release.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/data",
+			"comment": "Shows the data releases available on this REST server. May return more than one release (unfrequent non-standard Ensembl configuration).",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/external_dbs\/{species}",
+			"comment": "Lists all available external sources for a species.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/ping",
+			"comment": "Checks if the service is alive.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/rest",
+			"comment": "Shows the current version of the Ensembl REST API.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/software",
+			"comment": "Shows the current version of the Ensembl API used by the REST server.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/species",
+			"comment": "Lists all available species, their aliases, available adaptor groups and data release.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/variation\/{species}",
+			"comment": "List the variation sources used in Ensembl for a species.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "info\/variation\/populations\/{species}",
+			"comment": "List all populations for a species.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ld\/{species}\/{Identifier}",
+			"comment": "Computes and returns LD values between the given variant and all other variants in a window centered around the given variant. The window size is set to 500 kb.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ld\/{species}\/pairwise\/{Identifier1}\/{Identifier2}",
+			"comment": "Computes and returns LD values between the given variants.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ld\/{species}\/region\/{region}",
+			"comment": "Computes and returns LD values between all pairs of variants in the defined region.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "lookup\/Identifier\/{Identifier}",
+			"comment": "Find the species and database for a single id e.g. gene, transcript, protein.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "lookup\/symbol\/{species}\/{symbol}",
+			"comment": "Find the species and database for a symbol in a linked external database.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "GENE SYMBOL",
+						"uri": "http:\/\/edamontology.org\/data_1026"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "map\/cdna\/{Identifier}\/{region}",
+			"comment": "Convert from cDNA coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "map\/cds\/{Identifier}\/{region}",
+			"comment": "Convert from CDS coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "map\/{species}\/{asm_one}\/{region}\/{asm_two}",
+			"comment": "Convert from CDS coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "map\/translation\/{Identifier}\/{region}",
+			"comment": "Convert from protein (translation) coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ontology\/ancestors\/{Identifier}",
+			"comment": "Reconstruct the entire ancestry of a term from is_a and part_of relationships.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ontology\/ancestors\/chart\/{Identifier}",
+			"comment": "Reconstruct the entire ancestry of a term from is_a and part_of relationships.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ontology\/descendants\/{Identifier}",
+			"comment": "Find all the terms descended from a given term. By default searches are conducted within the namespace of the given id.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "ontology\/Identifier\/{Identifier}",
+			"comment": "Search for an ontological term by its namespaced id.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "ontology\/name\/{name}",
+			"comment": "Search for an ontological term by its namespaced id.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "NAME",
+						"uri": "http:\/\/edamontology.org\/data_2099"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "taxonomy\/classification\/{Identifier}",
+			"comment": "Return the taxonomic classification of a taxon node.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "taxonomy\/Identifier\/{Identifier}",
+			"comment": "Search for a taxonomic term by its id or name.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "taxonomy\/name\/{name}",
+			"comment": "Search for a taxonomic Identifier by a non-scientific name.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "NAME",
+						"uri": "http:\/\/edamontology.org\/data_2099"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "overlap\/Identifier\/{Identifier}",
+			"comment": "Retrieves features (e.g. genes, transcripts, variants and more) that overlap a region defined by the given id.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "overlap\/region\/{species}\/{region}",
+			"comment": "Retrieves features (e.g. genes, transcripts, variants and more) that overlap a given region.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "overlap\/translation\/{Identifier}",
+			"comment": "Retrieve features related to a specific Translation as described by its stable Identifier (e.g. domains, variants).",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "\/phenotype\/accession\/{species}\/{accession}",
+			"comment": "Return phenotype annotations for genomic features given a phenotype ontology accession.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Accession",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "\/phenotype\/term\/{species}\/{term}",
+			"comment": "Return phenotype annotations for genomic features given a phenotype ontology term.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "KEYWORD",
+						"uri": "http:\/\/edamontology.org\/data_0968"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "regulatory\/{species}\/{Identifier}",
+			"comment": "Returns a RegulatoryFeature given its stable Identifier (e.g. ENSR00000099113).",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "sequence\/Identifier\/{Identifier}",
+			"comment": "Request multiple types of sequence by stable id. Supports feature masking and expand options.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "sequence\/region\/{species}\/{region}",
+			"comment": "Returns the genomic sequence of the specified region of the given species. Supports feature masking and expand options.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "transcript_haplotypes\/{species}\/{Identifier}",
+			"comment": "Computes observed transcript haplotype sequences based on phased genotype data.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "vep\/{species}\/Identifier\/{Identifier}",
+			"comment": "Fetch variant consequences based on a HGVS notation.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "vep\/{species}\/region\/{region}\/{allele}\/",
+			"comment": "Fetch variant consequences.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "NAME",
+						"uri": " http:\/\/edamontology.org\/data_2099"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "vep\/{species}\/hgvs\/{hgvs_notation}\/",
+			"comment": "Fetch variant consequences based on a HGVS notation.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "variation\/{species}\/{Identifier}",
+			"comment": "Uses a variant id (e.g. rsID) to return the variation features including optional genotype, phenotype and population data.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Identifier",
+						"uri": "http:\/\/edamontology.org\/data_0842"
+					}
+				},
+				{
+					"data": {
+						"term": "SPECIES NAME",
+						"uri": "http:\/\/edamontology.org\/data_1045"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		}
+	]
+}
