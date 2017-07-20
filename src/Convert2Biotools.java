@@ -1,4 +1,3 @@
-
 import io.swagger.models.Operation;
 import io.swagger.models.Path;
 import io.swagger.models.Swagger;
@@ -11,15 +10,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -27,69 +23,31 @@ import org.json.simple.parser.ParseException;
 public class Convert2Biotools {	
 	
 
-	public Convert2Biotools(String inputFile) throws IOException, ParseException {
-		
-//		String inputFile = "ressource/input/OpenTrials.json";
-//		inputFile = "ressource/input/Orcid.json";
-		
+	public Convert2Biotools(String inputFile) throws IOException, ParseException {		
 		Swagger swagger = new SwaggerParser().read(inputFile);
 
-		HashMap<String, String> formatMap = new HashMap<String,String>();
-		
-		formatMap.put("application/json","http://edamontology.org/format_3464");
-		formatMap.put("text/xml","http://edamontology.org/format_2332");
-		
-		formatMap.put("application/xml","http://edamontology.org/format_2332");
-		formatMap.put("application/ld+json","http://edamontology.org/format_3749");
-		
-		formatMap.put("text/html","http://edamontology.org/format_2331");
-		formatMap.put("text/x-gff","http://edamontology.org/format_2305");
-		formatMap.put("text/plain","http://edamontology.org/format_1964");
-		formatMap.put("text/tab-separated-values","http://edamontology.org/format_3475");
-		formatMap.put("text/csv","http://edamontology.org/format_3752");
-		formatMap.put("text/x-fasta","http://edamontology.org/format_1929");
-		
-		formatMap.put("Format","http://edamontology.org/format_3475");
+		HashMap<String, String> formatMap = createFormatMap();
   
-		JSONObject onto = onto(inputFile);
-		
+		JSONObject onto = readOntology(inputFile);
 		
 		JSONObject jsonOutput = new JSONObject();
-		
-		JSONArray topic = new JSONArray();
-		
-		HashMap<String, String> topicMap = new HashMap<String,String>();
-		
-		
-		topicMap.put("uri", "http://edamontology.org/topic_3307");
-		topicMap.put("term","Computational biology");
-
-		topic.add(topicMap);
-		
-		topicMap.clear();
-		topicMap.put("uri", "http://edamontology.org/topic_0091");
-		topicMap.put("term","Bioinformatics");
-
-		topic.add(topicMap);
-
-		jsonOutput.put("topic", topic);
 		
 		JSONArray functions = new JSONArray();
 		for ( Entry<String, Path> entry : swagger.getPaths().entrySet()){
 			if (entry.getValue().getGet()!=null){
 				Operation op = entry.getValue().getGet();
 				
-//				System.out.println(op.getDescription()==null ? "" : op.getDescription());
+				LinkedHashMap linkedMap = new LinkedHashMap();
+				linkedMap.put("handle", entry.getKey());
 				
-				LinkedHashMap obj = new LinkedHashMap();
-				obj.put("handle", entry.getKey());
-				
-				if (op.getDescription()!=null & !op.getDescription().equals(""))
-					obj.put("comment", op.getDescription());
-					
-//					? obj.put("comment", op.getDescription();
-				
-//				obj.put("comment", op.getDescription()==null ? "" : op.getDescription());
+				if (op.getDescription()!=null & !op.getDescription().equals("")){
+					if (op.getDescription().length()>1000){
+						linkedMap.put("comment", op.getDescription().substring(0, 1000));						
+					}
+					else{
+						linkedMap.put("comment", op.getDescription());
+					}
+				}
 				
 				JSONArray operation = new JSONArray();
 				
@@ -99,7 +57,7 @@ public class Convert2Biotools {
 				operationMap.put("term","Data retrieval");
 				
 				operation.add(operationMap);
-				obj.put("operation", operation);
+				linkedMap.put("operation", operation);
 								
 				JSONArray input = new JSONArray();
 				
@@ -107,12 +65,13 @@ public class Convert2Biotools {
 				for ( Parameter para : op.getParameters()){
 					if (para.getRequired()){												
 						String term = para.getName();
-						String uri = (String)onto.get(term);
-						if (!uri.equals("null")){
+						Object obj = onto.get(term);
+						if ( obj instanceof JSONObject ){
+							JSONObject jsonObj = (JSONObject) obj;
 							HashMap<String, String> hashMap = new HashMap<String,String>();
 							JSONObject data = new JSONObject();
-							hashMap.put("uri", uri);
-							hashMap.put("term",formatter(term));
+							hashMap.put("uri", (String)jsonObj.get("uri"));
+							hashMap.put("term", (String)jsonObj.get("term"));
 							data.put("data",hashMap);	
 							input.add(data);	
 						}
@@ -126,6 +85,7 @@ public class Convert2Biotools {
 						required ++;
 					}
 				}
+				
 				if (required==0){
 					HashMap<String, String> hashMap = new HashMap<String,String>();
 					JSONObject data = new JSONObject();
@@ -134,16 +94,17 @@ public class Convert2Biotools {
 					input.add(data);	
 				}
 				
-				obj.put("input", input);
+				linkedMap.put("input", input);
 				
 				JSONArray output = new JSONArray();
 				
-				JSONObject data1 = new JSONObject();	
+				JSONObject dataOutput = new JSONObject();	
 				JSONArray array = new JSONArray();	
 				JSONArray topArray = new JSONArray();	
-				HashMap<String, String> hashMap1 = new HashMap<String,String>();
-				hashMap1.put("term", "Data");
-				data1.put("data",hashMap1);
+				
+				HashMap<String, String> hashMapOutput = new HashMap<String,String>();
+				hashMapOutput.put("term", "Data");
+				dataOutput.put("data",hashMapOutput);
 
 				
 				JSONObject format = new JSONObject();
@@ -160,11 +121,11 @@ public class Convert2Biotools {
 						}						
 					}
 					if (!array.isEmpty())
-						data1.put("format",array);					
+						dataOutput.put("format",array);					
 				}
-				output.add(data1);
-				obj.put("output", output);
-				functions.add(obj);
+				output.add(dataOutput);
+				linkedMap.put("output", output);
+				functions.add(linkedMap);
 			}
 		}
 		jsonOutput.put("function", functions);
@@ -173,13 +134,11 @@ public class Convert2Biotools {
 		outputFile = outputFile.replace("input", "output");
 		
 		try (FileWriter file = new FileWriter(outputFile)) {
-//			String niceFormattedJson = writer.toString();
 			file.write(jsonOutput.toJSONString());
-			System.out.println("\nJSON Object: " + jsonOutput.toJSONString());
 		}
 	}
 	
-	public JSONObject onto(String inputFile) throws FileNotFoundException, IOException, ParseException{
+	public static JSONObject readOntology(String inputFile) throws FileNotFoundException, IOException, ParseException{
 		String onto = inputFile.replace(".json", "_onto.json");
 		onto = onto.replace("input", "ontology");
 		JSONParser parser = new JSONParser();		
@@ -191,44 +150,57 @@ public class Convert2Biotools {
 	
 	
 	public String formatter(String term){
-
-		term = term.replaceAll("id", "identifier");	
+		term = term.replaceAll("x-gff", "GFF");
+		term = term.replaceAll("x-fasta", "fasta");
+		
 		term = term.replaceAll("ld\\+json", "JSON-LD");
 		term = term.replaceAll("application/ld+json", "JSON-LD");
 		term = term.replaceAll("application/", "");
 		term = term.replaceAll("text/", "");
-		term = term.replaceAll("osdbid", "identifier");
-		term = term.replaceAll("assayId", "identifier");
-		term = term.replaceAll("sampleIdFilter", "identifier");
-		term = term.replaceAll("sampleId", "identifier");
-		term = term.replaceAll("client_id", "identifier");
-		term = term.replaceAll("orcid", "identifier");
-		term = term.replaceAll("trialId", "identifier");
 		
 		return term.toUpperCase();
 	}
 	
-	public static void main(String[] args) throws IOException, ParseException {
-
-		new Convert2Biotools("resource/input/OpenTrials.json");	
+	
+	public HashMap<String,String> createFormatMap(){
+		HashMap<String,String> formatMap = new HashMap<String,String>();
 		
-//		File dir = new File("ressource/input/");
-//		
-//		FilenameFilter textFilter = new FilenameFilter() {
-//			public boolean accept(File dir, String name) {
-//				String lowercaseName = name.toLowerCase();
-//				if (lowercaseName.endsWith(".json")) {
-//					return true;
-//				} else {
-//					return false;
-//				}
-//			}
-//		};
-//		
-//		File[] listFiles = dir.listFiles(textFilter);			
-//		for(File f : listFiles){
-//			new Convert2Biotools(f.getAbsolutePath());	
-//		}
+		formatMap.put("application/json","http://edamontology.org/format_3464");
+		formatMap.put("text/xml","http://edamontology.org/format_2332");
+		
+		formatMap.put("application/xml","http://edamontology.org/format_2332");
+		formatMap.put("application/ld+json","http://edamontology.org/format_3749");
+		
+		formatMap.put("text/html","http://edamontology.org/format_2331");
+		formatMap.put("text/x-gff","http://edamontology.org/format_2305");
+		formatMap.put("text/plain","http://edamontology.org/format_1964");
+		formatMap.put("text/tab-separated-values","http://edamontology.org/format_3475");
+		formatMap.put("text/csv","http://edamontology.org/format_3752");
+		formatMap.put("text/x-fasta","http://edamontology.org/format_1929");
+		
+		formatMap.put("Format","http://edamontology.org/format_3475");
+		return formatMap;
+	}
+	
+	
+	public static void main(String[] args) throws IOException, ParseException {
+		File dir = new File("ressource/input/");
+		
+		FilenameFilter textFilter = new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				String lowercaseName = name.toLowerCase();
+				if (lowercaseName.endsWith(".json")) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		};
+		
+		File[] listFiles = dir.listFiles(textFilter);			
+		for(File f : listFiles){
+			new Convert2Biotools(f.getAbsolutePath());	
+		}
 	}
 
 }

@@ -17,7 +17,7 @@ import org.json.simple.JSONObject;
 public class OntologiesMapTemplateBuilder {
 
 	public static void main(String[] args) throws IOException {
-		File dir = new File("ressource/input/");
+		File dir = new File("resource/input/");
 		
 		FilenameFilter textFilter = new FilenameFilter() {
 			public boolean accept(File dir, String name) {
@@ -33,6 +33,7 @@ public class OntologiesMapTemplateBuilder {
 		File[] listFiles = dir.listFiles(textFilter);			
 		for(File f : listFiles){
 			String source = f.getAbsolutePath();
+			source = "resource/input/WikiPathways.json";
 			Swagger swagger = new SwaggerParser().read(source);
 			Set<String> set = new HashSet<String>();
 
