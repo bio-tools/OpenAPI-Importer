@@ -1,0 +1,11 @@
+{
+	"id": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"trialId": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"in": "null"
+}

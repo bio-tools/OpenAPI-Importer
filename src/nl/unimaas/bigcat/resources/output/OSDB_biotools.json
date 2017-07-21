@@ -1,0 +1,326 @@
+{
+	"function": [
+		{
+			"handle": "\/collections\/view\/{identifier}\/{format}",
+			"comment": "View a collection and its spectra in the OSDB.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/compounds\/index\/{format}",
+			"comment": "All the compunds with spectra currently in the OSDB.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/compounds\/view\/{identifier}\/{format}",
+			"comment": "View a compound and its metadata and spectra in the OSDB.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/spectra\/plot\/{identifier}\/{tech}\/{width}\/{height}\/{embed}",
+			"comment": "Plot only a spectrum (no metadata).  Useful for embedding in other websites.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/spectra\/view\/{identifier}\/{format}",
+			"comment": "View a spectrum and its metadata.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON-LD",
+							"uri": "http:\/\/edamontology.org\/format_3749"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/spectra\/splashes\/{include}",
+			"comment": "Gets a list of all the `Spectra` splash identifiers in the database. Currently on available for MS spectra.  See http:\/\/splash.fiehnlab.ucdavis.edu\/.\n",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			]
+		},
+		{
+			"handle": "\/systems\/index\/{format}",
+			"comment": "All the chemical systems with spectra currently in the OSDB.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/systems\/view\/{osdbid}\/{format}",
+			"comment": "View a system, its compounds, and spectra.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		}
+	]
+}

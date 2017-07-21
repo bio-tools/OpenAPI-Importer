@@ -1,0 +1,902 @@
+{
+	"function": [
+		{
+			"handle": "\/antigen",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/antigen\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/coordinates",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/coordinates\/location\/{accession}:{pPosition}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/coordinates\/location\/{accession}:{pStart}-{pEnd}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/coordinates\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/coordinates\/{dbtype}:{dbid}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/coordinates\/{taxonomy}\/{chromosome}:{gstart}-{gend}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/features",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/features\/type\/{type}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/features\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteins",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "FASTA",
+							"uri": "http:\/\/edamontology.org\/format_1929"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteins\/interaction\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteins\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "FASTA",
+							"uri": "http:\/\/edamontology.org\/format_1929"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteins\/{accession}\/isoforms",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "FASTA",
+							"uri": "http:\/\/edamontology.org\/format_1929"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteins\/{dbtype}:{dbid}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "FASTA",
+							"uri": "http:\/\/edamontology.org\/format_1929"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteomes",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteomes\/genecentric\/{upid}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteomes\/proteins\/{upid}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteomes\/{upid}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteomics",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/proteomics\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/uniparc\/accession\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "FASTA",
+							"uri": "http:\/\/edamontology.org\/format_1929"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/uniparc\/upid\/{upid}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "FASTA",
+							"uri": "http:\/\/edamontology.org\/format_1929"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/variation",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/variation\/{accession}",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "GFF",
+							"uri": "http:\/\/edamontology.org\/format_2305"
+						}
+					]
+				}
+			]
+		}
+	]
+}

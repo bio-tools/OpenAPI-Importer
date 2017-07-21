@@ -1,0 +1,13 @@
+{
+	"orcid": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"putCode": "null",
+	"client_id": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"putCodes": "null",
+	"type": "null"
+}

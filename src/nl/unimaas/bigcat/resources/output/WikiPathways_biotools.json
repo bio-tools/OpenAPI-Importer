@@ -1,0 +1,1222 @@
+{
+	"function": [
+		{
+			"handle": "\/listOrganisms",
+			"comment": "listOrganisms",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/listPathways",
+			"comment": "listPathways",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getPathway",
+			"comment": "getPathway",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getPathwayInfo",
+			"comment": "getPathwayInfoGet some general info about the pathway, such as the name, species, without downloading the GPML.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getPathwayHistory",
+			"comment": "getPathwayHistoryGet the revision history of a pathway.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getRecentChanges",
+			"comment": "getRecentChangesGet the recently changed pathways.<br>Note: the recent changes table only retains items for a limited time (2 months), so there is no guarantee that you will get all changes when the timestamp points to a date that is more than 2 months in the past.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/login",
+			"comment": "loginStart a logged in session, using an existing WikiPathways account. This function will return an authentication code that can be used to excecute methods that need authentication (e.g. updatePathway).",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getPathwayAs",
+			"comment": "getPathwayAsDownload a pathway in the specified file format.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/updatePathway",
+			"comment": "updatePathwayUpdate a pathway on the wiki with the given GPML code.<br>Note: To create\/modify pathways via the web service, you need to have an account with web service write permissions. Please contact us to request write access for the web service.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/findPathwaysByText",
+			"comment": "findPathwaysByText",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/findPathwaysByXref",
+			"comment": "findPathwaysByXref",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/removeCurationTag",
+			"comment": "removeCurationTagRemove a curation tag from a pathway.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/saveCurationTag",
+			"comment": "saveCurationTag",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getCurationTags",
+			"comment": "getCurationTagsGet all curation tags for the given tag name. Use this method if you want to find all pathways that are tagged with a specific curation tag.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getCurationTagsByName",
+			"comment": "getCurationTagsByNameGet all curation tags for the given tag name. Use this method if you want to find all pathways that are tagged with a specific curation tag.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getCurationTagHistory",
+			"comment": "getCurationTagHistory",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getColoredPathway",
+			"comment": "getColoredPathwayGet a colored image version of the pathway.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/findInteractions",
+			"comment": "findInteractionsFind interactions defined in WikiPathways pathways.",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getXrefList",
+			"comment": "getXrefList",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/findPathwaysByLiterature",
+			"comment": "findPathwaysByLiterature",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/saveOntologyTag",
+			"comment": "saveOntologyTag",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/removeOntologyTag",
+			"comment": "removeOntologyTag",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				},
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getOntologyTermsByPathway",
+			"comment": "getOntologyTermsByPathway",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getPathwaysByOntologyTerm",
+			"comment": "getPathwaysByOntologyTerm",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getPathwaysByParentOntologyTerm",
+			"comment": "getPathwaysByParentOntologyTerm",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		},
+		{
+			"handle": "\/getUserByOrcid",
+			"comment": "getUserByOrcid",
+			"operation": [
+				{
+					"term": "Data retrieval",
+					"uri": "http:\/\/edamontology.org\/operation_2422"
+				}
+			],
+			"input": [
+				{
+					"data": {
+						"term": "Data"
+					}
+				}
+			],
+			"output": [
+				{
+					"data": {
+						"term": "Data"
+					},
+					"format": [
+						{
+							"term": "JSON",
+							"uri": "http:\/\/edamontology.org\/format_3464"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						},
+						{
+							"term": "HTML",
+							"uri": "http:\/\/edamontology.org\/format_2331"
+						},
+						{
+							"term": "XML",
+							"uri": "http:\/\/edamontology.org\/format_2332"
+						}
+					]
+				}
+			]
+		}
+	]
+}

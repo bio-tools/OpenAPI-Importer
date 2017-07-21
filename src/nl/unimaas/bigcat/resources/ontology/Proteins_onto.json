@@ -1,0 +1,30 @@
+{
+	"pEnd": "null",
+	"dbtype": "null",
+	"gend": "null",
+	"upid": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"terms": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"accession": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"gstart": "null",
+	"pStart": "null",
+	"dbid": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"taxonomy": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"chromosome": "null",
+	"type": "null",
+	"pPosition": "null"
+}

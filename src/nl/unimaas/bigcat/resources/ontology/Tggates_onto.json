@@ -1,0 +1,14 @@
+{
+	"assayId": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"sampleIdFilter": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"sampleId": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	}
+}

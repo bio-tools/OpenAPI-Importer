@@ -1,0 +1,23 @@
+{
+	"sourceSystemCode": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"systemCode": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"query": "null",
+	"targetSystemCode": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"identifier":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"organism":  {
+		"term": "Species name",	
+		"uri": "http://edamontology.org/data_1045"
+	}
+}

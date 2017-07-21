@@ -1,0 +1,56 @@
+{
+	"region": "null",
+	"asm_one": "null",
+	"asm_two": "null",
+	"hgvs_notation": "null",
+	"stable_id": {
+		"term": "Ensembl gene ID ",
+		"uri":	"http://edamontology.org/data_1033"
+	},
+	"allele": {
+		"term": "Name",	
+		"uri": "http://edamontology.org/data_2099"
+	},
+	"species": {
+		"term": "Species name",	
+		"uri": "http://edamontology.org/data_1045"
+	},
+	"symbol": {
+		"term": "Gene symbol",
+		"uri":	"http://edamontology.org/data_1026"
+	},
+	"id2": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"id1": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"id": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"variant_name": {
+		"term": "Name",	
+		"uri": "http://edamontology.org/data_2099"
+	},
+	"region_name": {
+		"term": "Name",	
+		"uri": "http://edamontology.org/data_2099"
+	},
+	"term": {
+		"term": "Keyword",	
+		"uri": "http://edamontology.org/data_0968"
+	},
+	"name": {
+		"term": "Name",	
+		"uri": "http://edamontology.org/data_2099"
+	},
+	"accession": {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"method": "null",
+	"feature": "null"
+}

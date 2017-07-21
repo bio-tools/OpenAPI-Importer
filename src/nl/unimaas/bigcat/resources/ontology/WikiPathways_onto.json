@@ -1,0 +1,44 @@
+{
+	"text": "null",
+	"fileType": "null",
+	"orcid":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"pwId":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"query": "null",
+	"ids":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"graphId":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"code": "null",
+	"termId":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"pass": "null",
+	"timestamp": "null",
+	"revision": "null",
+	"username": "null",
+	"color": "null",
+	"term":  {
+		"term": "identifier",	
+		"uri": "http://edamontology.org/data_0842"
+	},
+	"description": "null",
+	"name":  {
+		"term": "Name",	
+		"uri": "http://edamontology.org/data_2099"
+	},
+	"tagName": "null",
+	"gpml": "null",
+	"user": "null",
+	"auth": "null"
+}

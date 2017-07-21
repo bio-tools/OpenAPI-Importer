@@ -1,0 +1,959 @@
+{
+
+    "swagger": "2.0",
+    "info": {
+        "description": "This API exposes Open TG-GATEs toxicogenomics data.\n\n Open TG-GATEs is a public toxicogenomics database based on the Japanese Toxicogenomics Projects (TGP and TGP2),\n developed so that a wider community of researchers could utilize the fruits of this research. \n This API provides access to the RNA microarray (Affymetrix) samples from Open TG-GATEs.\n Rat data (in vitro, primary hepatocytes, and in vivo, liver and kidney), as well as human data \n (in vitro) is provided, for repeat and single doses.\n",
+        "version": "1.0.0",
+        "title": "Open TG-GATEs interface (Assay information, sample information and assay values for these)"
+    },
+    "host": "open-tggates-api.cloud.douglasconnect.com",
+    "basePath": "/v2",
+    "schemes": [
+        "https"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/assays": {
+            "get": {
+                "summary": "The available assays, such as Affymetrix probes, and their metadata.",
+                "parameters": [
+                    {
+                        "name": "assayIds",
+                        "in": "query",
+                        "description": "Assay IDs to retrieve metadata for",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "organismFilter",
+                        "in": "query",
+                        "description": "Filter terms for the organism field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "platformNameFilter",
+                        "in": "query",
+                        "description": "Filter terms for the platform name field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum count of assays to return (for paging)",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Number of assays to skip (for paging)",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Search terms for the assays endpoint",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of assay specifications",
+                        "schema": {
+                            "$ref": "#/definitions/Assays"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/assays/{assayId}": {
+            "get": {
+                "summary": "Information about a single assay.",
+                "parameters": [
+                    {
+                        "name": "assayId",
+                        "in": "path",
+                        "description": "Assay endpoint ID to get metadata for",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An assay specification",
+                        "schema": {
+                            "$ref": "#/definitions/Assay"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/samples": {
+            "get": {
+                "summary": "The available samples (individual GeneChips) and their attributes.",
+                "parameters": [
+                    {
+                        "name": "sampleIds",
+                        "in": "query",
+                        "description": "Sample IDs to get metadata for",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "organismFilter",
+                        "in": "query",
+                        "description": "Filter terms for the organism field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "tissueFilter",
+                        "in": "query",
+                        "description": "Filter terms for the tissue field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "compoundNameFilter",
+                        "in": "query",
+                        "description": "Filter terms for the compound name field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "cellTypeFilter",
+                        "in": "query",
+                        "description": "Filter terms for the cell type field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "repeatTypeFilter",
+                        "in": "query",
+                        "description": "Filter terms for the repeat type field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "doseLevelFilter",
+                        "in": "query",
+                        "description": "Filter terms for the dose level field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "timepointHrFilter",
+                        "in": "query",
+                        "description": "Filter terms for the timepoint (hr) field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum count of samples to return (for paging)",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Number of samples to skip (for paging)",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Search terms for the samples endpoint",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of sample specifications",
+                        "schema": {
+                            "$ref": "#/definitions/Samples"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/samples/{sampleId}": {
+            "get": {
+                "summary": "Information about a single sample.",
+                "parameters": [
+                    {
+                        "name": "sampleId",
+                        "in": "path",
+                        "description": "Sample ID to get metadata for",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A sample specification",
+                        "schema": {
+                            "$ref": "#/definitions/Sample"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/compounds": {
+            "get": {
+                "summary": "A list of available compounds.",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum count of compounds to return (for paging)",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Number of compounds to skip (for paging)",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Search terms for the compounds endpoint",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A compound list",
+                        "schema": {
+                            "$ref": "#/definitions/Compounds"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/pathologies": {
+            "get": {
+                "summary": "Information about pathological findings.",
+                "parameters": [
+                    {
+                        "name": "sampleIdFilter",
+                        "in": "query",
+                        "description": "Sample IDs to get pathologies for",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "compoundNameFilter",
+                        "in": "query",
+                        "description": "Filter terms for the compound name field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "timepointHrFilter",
+                        "in": "query",
+                        "description": "Filter terms for the timepoint (hr) field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "tissueFilter",
+                        "in": "query",
+                        "description": "Filter terms for the tissue field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "doseLevelFilter",
+                        "in": "query",
+                        "description": "Filter terms for the dose level field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "findingFilter",
+                        "in": "query",
+                        "description": "Filter terms for the pathological finding field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "topographyFilter",
+                        "in": "query",
+                        "description": "Filter terms for the topography field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "severityFilter",
+                        "in": "query",
+                        "description": "Filter terms for the pathological severity field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "spontaneousFilter",
+                        "in": "query",
+                        "description": "Filter terms for the spontaneous lesion field",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "boolean"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum count of pathological findings to return (for paging)",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Number of pathological findings to skip (for paging)",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Search terms for the pathologies endpoint",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Pathologies matching the specified filter terms",
+                        "schema": {
+                            "$ref": "#/definitions/Pathologies"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/results": {
+            "get": {
+                "summary": "Assay values, such as RNA expression data, for a specified set of assays and samples.",
+                "parameters": [
+                    {
+                        "name": "sampleIdFilter",
+                        "in": "query",
+                        "description": "Sample IDs to query",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "assayIdFilter",
+                        "in": "query",
+                        "description": "Assay IDs to query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "valueTypeFilter",
+                        "in": "query",
+                        "description": "Value types to query for",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "pipes"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum count of results to return (for paging)",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Number of results to skip (for paging)",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of arrays (sample-major) containing expression data for samples and assays.",
+                        "schema": {
+                            "$ref": "#/definitions/Results"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Assay": {
+            "type": "object",
+            "properties": {
+                "_id_": {
+                    "type": "string",
+                    "description": "Assay unique identifier",
+                    "title": "Assay ID"
+                },
+                "assayId": {
+                    "type": "string",
+                    "description": "A unique string that identifies the assay",
+                    "title": "Assay ID"
+                },
+                "geneSymbols": {
+                    "type": "array",
+                    "description": "The gene symbols associated with this assay",
+                    "title": "Gene symbols",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "organism": {
+                    "type": "string",
+                    "description": "The target organism",
+                    "title": "Organism"
+                },
+                "platformName": {
+                    "type": "string",
+                    "description": "The platform associated with this assay, if any",
+                    "title": "Platform"
+                }
+            }
+        },
+        "AssayAggregations": {
+            "type": "object",
+            "properties": {
+                "organism": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "platformName": {
+                    "$ref": "#/definitions/Aggregation"
+                }
+            }
+        },
+        "Assays": {
+            "type": "object",
+            "properties": {
+                "aggregations": {
+                    "$ref": "#/definitions/AssayAggregations"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "Total count of results with current filtering"
+                },
+                "assays": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Assay"
+                    }
+                }
+            }
+        },
+        "Sample": {
+            "type": "object",
+            "properties": {
+                "_id_": {
+                    "type": "string",
+                    "description": "Sample unique identifier",
+                    "title": "Sample ID"
+                },
+                "sampleId": {
+                    "type": "string",
+                    "description": "A unique string that identifies the sample",
+                    "title": "Sample ID"
+                },
+                "compoundName": {
+                    "type": "string",
+                    "description": "The name of the compound that was administered",
+                    "title": "Compound name"
+                },
+                "timepointHr": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "The duration length to conduct the test portion of the assay",
+                    "title": "Exposure time (hrs)"
+                },
+                "organism": {
+                    "type": "string",
+                    "description": "The target organism",
+                    "title": "Organism"
+                },
+                "tissue": {
+                    "type": "string",
+                    "description": "The organ-level, anatomical entity of the protein or cell used in the assay",
+                    "title": "Tissue"
+                },
+                "doseLevel": {
+                    "type": "string",
+                    "description": "The dose level of the administered compound",
+                    "title": "Dose level"
+                },
+                "repeatType": {
+                    "type": "string",
+                    "description": "Whether the exposure to the compound was single or repeated",
+                    "title": "Single/repeat dose"
+                },
+                "cellType": {
+                    "type": "string",
+                    "description": "The type of cell being assayed",
+                    "title": "Cell type"
+                },
+                "controlSamples": {
+                    "type": "array",
+                    "description": "IDs of the control samples for this treated sample, if available",
+                    "title": "Control samples",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "SampleAggregations": {
+            "type": "object",
+            "properties": {
+                "compoundName": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "timepointHr": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "organism": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "tissue": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "doseLevel": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "repeatType": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "cellType": {
+                    "$ref": "#/definitions/Aggregation"
+                }
+            }
+        },
+        "Samples": {
+            "type": "object",
+            "properties": {
+                "aggregations": {
+                    "$ref": "#/definitions/SampleAggregations"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "Total count of results with current filtering"
+                },
+                "samples": {
+                    "type": "array",
+                    "description": "Array of Sample objects",
+                    "items": {
+                        "$ref": "#/definitions/Sample"
+                    }
+                }
+            }
+        },
+        "Results": {
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "description": "Total count of results with current filtering"
+                },
+                "results": {
+                    "type": "array",
+                    "description": "RNA expression values for the requested samples and assays",
+                    "items": {
+                        "$ref": "#/definitions/Result"
+                    }
+                }
+            }
+        },
+        "Result": {
+            "type": "object",
+            "properties": {
+                "sampleId": {
+                    "type": "string",
+                    "description": "A unique string that identifies the sample",
+                    "title": "Sample ID"
+                },
+                "assayId": {
+                    "type": "string",
+                    "description": "A unique string that identifies the assay",
+                    "title": "Assay ID"
+                },
+                "geneSymbols": {
+                    "type": "array",
+                    "description": "The gene symbols associated with the assay",
+                    "title": "Gene symbols",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "value": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The expression value",
+                    "title": "Expression value"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "The kind of value reported",
+                    "title": "Value type"
+                },
+                "pvalue": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The p-value (t-test of treated against control), if available",
+                    "title": "p-value"
+                }
+            }
+        },
+        "Pathologies": {
+            "type": "object",
+            "properties": {
+                "aggregations": {
+                    "$ref": "#/definitions/PathologyAggregations"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "Total count of results with current filtering"
+                },
+                "pathologies": {
+                    "type": "array",
+                    "description": "Pathology findings and associated sample information",
+                    "items": {
+                        "$ref": "#/definitions/Pathology"
+                    }
+                }
+            }
+        },
+        "Pathology": {
+            "type": "object",
+            "properties": {
+                "_id_": {
+                    "type": "string",
+                    "description": "Pathological finding unique identifier",
+                    "title": "Pathology ID"
+                },
+                "sampleId": {
+                    "type": "string",
+                    "description": "A unique string that identifies the sample",
+                    "title": "Sample ID"
+                },
+                "compoundName": {
+                    "type": "string",
+                    "description": "The name of the compound that was administered",
+                    "title": "Compound name"
+                },
+                "timepointHr": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "The duration length to conduct the test portion of the assay",
+                    "title": "Exposure time (hrs)"
+                },
+                "tissue": {
+                    "type": "string",
+                    "description": "The organ-level, anatomical entity of the protein or cell used in the assay",
+                    "title": "Tissue"
+                },
+                "doseLevel": {
+                    "type": "string",
+                    "description": "The dose level of the administered compound",
+                    "title": "Dose level"
+                },
+                "finding": {
+                    "type": "string",
+                    "description": "Description of the pathological finding",
+                    "title": "Finding"
+                },
+                "topography": {
+                    "type": "string",
+                    "description": "Region of the organ where the pathological changes were found",
+                    "title": "Topography"
+                },
+                "severity": {
+                    "type": "string",
+                    "description": "The severity degree of the finding",
+                    "title": "Severity"
+                },
+                "spontaneous": {
+                    "type": "boolean",
+                    "description": "Whether the lesion occurred spontaneously",
+                    "title": "Spontaneous?"
+                }
+            }
+        },
+        "PathologyAggregations": {
+            "type": "object",
+            "properties": {
+                "compoundName": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "timepointHr": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "tissue": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "doseLevel": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "finding": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "topography": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "severity": {
+                    "$ref": "#/definitions/Aggregation"
+                },
+                "spontaneous": {
+                    "$ref": "#/definitions/Aggregation"
+                }
+            }
+        },
+        "Compounds": {
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "description": "Total count of results with current filtering"
+                },
+                "compounds": {
+                    "type": "array",
+                    "description": "Compounds and associated information",
+                    "items": {
+                        "$ref": "#/definitions/Compound"
+                    }
+                }
+            }
+        },
+        "Compound": {
+            "type": "object",
+            "properties": {
+                "_id_": {
+                    "type": "string",
+                    "description": "Compound unique identifier",
+                    "title": "Compound ID"
+                },
+                "compoundName": {
+                    "type": "string",
+                    "description": "The name of the compound"
+                }
+            }
+        },
+        "Aggregation": {
+            "type": "object",
+            "properties": {
+                "buckets": {
+                    "type": "array",
+                    "description": "Aggregation values (buckets) and corresponding item counts",
+                    "items": {
+                        "$ref": "#/definitions/AggregationBucket"
+                    }
+                },
+                "filterTerm": {
+                    "type": "string",
+                    "description": "Term used to filter the results"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Aggregation name"
+                }
+            }
+        },
+        "AggregationBucket": {
+            "type": "object",
+            "properties": {
+                "doc_count": {
+                    "type": "integer",
+                    "description": "Number of items if the current view is filtered by this additional value"
+                },
+                "key": {
+                    "type": "string",
+                    "description": "Value to display to the user and use for filtering"
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+
+}
