@@ -3,7 +3,13 @@ Tool to convert Swagger configuration files to Bio.Tools input XML.
 
 #### Steps:
 
-###### 1. Run this command to create the ontologies templates
+###### 1. Build the project
+ 
+```
+mvn clean install
+```
+
+###### 2. Run this command to create the ontologies templates
  
 ```
 mvn exec:java -Dexec.mainClass="nl.unimaas.bigcat.OntologiesMapTemplateBuilder"
@@ -11,7 +17,7 @@ mvn exec:java -Dexec.mainClass="nl.unimaas.bigcat.OntologiesMapTemplateBuilder"
 
 The ontologies files are in resources/ontology. 
 
-###### 2. Annotate the terms when it's possible
+###### 3. Annotate the terms when it's possible
 
 E.g:
 	
@@ -26,7 +32,7 @@ annotated to
 }
 ```
 
-###### 3.Run this command to convert
+###### 4.Run this command to convert
 ```
 mvn exec:java -Dexec.mainClass="nl.unimaas.bigcat.Convert2Biotools"
 ```
