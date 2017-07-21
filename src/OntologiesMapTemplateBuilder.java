@@ -33,7 +33,6 @@ public class OntologiesMapTemplateBuilder {
 		File[] listFiles = dir.listFiles(textFilter);			
 		for(File f : listFiles){
 			String source = f.getAbsolutePath();
-			source = "resource/input/WikiPathways.json";
 			Swagger swagger = new SwaggerParser().read(source);
 			Set<String> set = new HashSet<String>();
 

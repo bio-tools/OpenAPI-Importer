@@ -25,7 +25,7 @@ public class Convert2Biotools {
 
 	public Convert2Biotools(String inputFile) throws IOException, ParseException {		
 		Swagger swagger = new SwaggerParser().read(inputFile);
-
+		
 		HashMap<String, String> formatMap = createFormatMap();
   
 		JSONObject onto = readOntology(inputFile);
@@ -184,7 +184,7 @@ public class Convert2Biotools {
 	
 	
 	public static void main(String[] args) throws IOException, ParseException {
-		File dir = new File("ressource/input/");
+		File dir = new File("resource/input/");
 		
 		FilenameFilter textFilter = new FilenameFilter() {
 			public boolean accept(File dir, String name) {

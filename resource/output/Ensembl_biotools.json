@@ -1,18 +1,8 @@
 {
-	"topic": [
-		{
-			"term": "Bioinformatics",
-			"uri": "http:\/\/edamontology.org\/topic_0091"
-		},
-		{
-			"term": "Bioinformatics",
-			"uri": "http:\/\/edamontology.org\/topic_0091"
-		}
-	],
 	"function": [
 		{
-			"handle": "archive\/Identifier\/{Identifier}",
-			"comment": "Uses the given id to return the archived sequence.",
+			"handle": "archive\/id\/{id}",
+			"comment": "Uses the given identifier to return the archived sequence.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -22,7 +12,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -46,8 +36,8 @@
 			]
 		},
 		{
-			"handle": "genetree\/Identifier\/{Identifier}",
-			"comment": "Retrieves a gene tree for a gene tree stable id",
+			"handle": "genetree\/id\/{id}",
+			"comment": "Retrieves a gene tree for a gene tree stable identifier",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -57,7 +47,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -81,8 +71,8 @@
 			]
 		},
 		{
-			"handle": "genetree\/member\/Identifier\/{Identifier}",
-			"comment": "Retrieves the gene tree that contains the gene \/ transcript \/ translation stable id",
+			"handle": "genetree\/member\/id\/{id}",
+			"comment": "Retrieves the gene tree that contains the gene \/ transcript \/ translation stable identifier",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -92,7 +82,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -117,7 +107,7 @@
 		},
 		{
 			"handle": "genetree\/member\/symbol\/{species}\/{symbol}",
-			"comment": "Retrieves the gene tree that contains the gene Identifierentified by a symbol",
+			"comment": "Retrieves the gene tree that contains the gene identified by a symbol",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -127,13 +117,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "GENE SYMBOL",
+						"term": "Gene symbol",
 						"uri": "http:\/\/edamontology.org\/data_1026"
 					}
 				}
@@ -168,7 +158,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
@@ -197,7 +187,7 @@
 			]
 		},
 		{
-			"handle": "homology\/Identifier\/{Identifier}",
+			"handle": "homology\/id\/{id}",
 			"comment": "Retrieves genomic alignments as separate blocks based on a region and species",
 			"operation": [
 				{
@@ -208,7 +198,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -243,13 +233,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "GENE SYMBOL",
+						"term": "Gene symbol",
 						"uri": "http:\/\/edamontology.org\/data_1026"
 					}
 				}
@@ -273,8 +263,8 @@
 			]
 		},
 		{
-			"handle": "xrefs\/Identifier\/{Identifier}",
-			"comment": "Perform lookups of Ensembl ids and retrieve their external references in other databases",
+			"handle": "xrefs\/id\/{id}",
+			"comment": "Perform lookups of Ensembl Identifiers and retrieve their external references in other databases",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -284,7 +274,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -319,13 +309,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "GENE SYMBOL",
+						"term": "Gene symbol",
 						"uri": "http:\/\/edamontology.org\/data_1026"
 					}
 				}
@@ -360,13 +350,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "NAME",
+						"term": "Name",
 						"uri": "http:\/\/edamontology.org\/data_2099"
 					}
 				}
@@ -390,7 +380,7 @@
 			]
 		},
 		{
-			"handle": "eqtl\/Identifier\/{species}\/{stable_Identifier}",
+			"handle": "eqtl\/id\/{species}\/{stable_id}",
 			"comment": "Returns the p-value for each SNP in a given gene (e.g. ENSG00000227232)",
 			"operation": [
 				{
@@ -401,13 +391,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "ENSEMBL GENE Identifier",
+						"term": "Ensembl gene ID ",
 						"uri": "http:\/\/edamontology.org\/data_1033"
 					}
 				}
@@ -442,13 +432,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "NAME",
+						"term": "Name",
 						"uri": "http:\/\/edamontology.org\/data_2099"
 					}
 				}
@@ -483,7 +473,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -518,7 +508,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -553,7 +543,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -588,13 +578,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "NAME",
+						"term": "Name",
 						"uri": "http:\/\/edamontology.org\/data_2099"
 					}
 				}
@@ -629,7 +619,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -800,7 +790,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -971,7 +961,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1006,7 +996,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1030,7 +1020,7 @@
 			]
 		},
 		{
-			"handle": "ld\/{species}\/{Identifier}",
+			"handle": "ld\/{species}\/{id}",
 			"comment": "Computes and returns LD values between the given variant and all other variants in a window centered around the given variant. The window size is set to 500 kb.",
 			"operation": [
 				{
@@ -1041,13 +1031,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1071,7 +1061,7 @@
 			]
 		},
 		{
-			"handle": "ld\/{species}\/pairwise\/{Identifier1}\/{Identifier2}",
+			"handle": "ld\/{species}\/pairwise\/{id1}\/{id2}",
 			"comment": "Computes and returns LD values between the given variants.",
 			"operation": [
 				{
@@ -1082,19 +1072,19 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1129,7 +1119,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
@@ -1158,8 +1148,8 @@
 			]
 		},
 		{
-			"handle": "lookup\/Identifier\/{Identifier}",
-			"comment": "Find the species and database for a single id e.g. gene, transcript, protein.",
+			"handle": "lookup\/id\/{id}",
+			"comment": "Find the species and database for a single identifier e.g. gene, transcript, protein.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1169,7 +1159,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1204,13 +1194,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
 				{
 					"data": {
-						"term": "GENE SYMBOL",
+						"term": "Gene symbol",
 						"uri": "http:\/\/edamontology.org\/data_1026"
 					}
 				}
@@ -1234,7 +1224,7 @@
 			]
 		},
 		{
-			"handle": "map\/cdna\/{Identifier}\/{region}",
+			"handle": "map\/cdna\/{id}\/{region}",
 			"comment": "Convert from cDNA coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
 			"operation": [
 				{
@@ -1245,7 +1235,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
@@ -1274,7 +1264,7 @@
 			]
 		},
 		{
-			"handle": "map\/cds\/{Identifier}\/{region}",
+			"handle": "map\/cds\/{id}\/{region}",
 			"comment": "Convert from CDS coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
 			"operation": [
 				{
@@ -1285,7 +1275,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
@@ -1335,7 +1325,7 @@
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
@@ -1364,7 +1354,7 @@
 			]
 		},
 		{
-			"handle": "map\/translation\/{Identifier}\/{region}",
+			"handle": "map\/translation\/{id}\/{region}",
 			"comment": "Convert from protein (translation) coordinates to genomic coordinates. Output reflects forward orientation coordinates as returned from the Ensembl API.",
 			"operation": [
 				{
@@ -1375,7 +1365,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
@@ -1404,7 +1394,7 @@
 			]
 		},
 		{
-			"handle": "ontology\/ancestors\/{Identifier}",
+			"handle": "ontology\/ancestors\/{id}",
 			"comment": "Reconstruct the entire ancestry of a term from is_a and part_of relationships.",
 			"operation": [
 				{
@@ -1415,7 +1405,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1439,7 +1429,7 @@
 			]
 		},
 		{
-			"handle": "ontology\/ancestors\/chart\/{Identifier}",
+			"handle": "ontology\/ancestors\/chart\/{id}",
 			"comment": "Reconstruct the entire ancestry of a term from is_a and part_of relationships.",
 			"operation": [
 				{
@@ -1450,7 +1440,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1474,8 +1464,8 @@
 			]
 		},
 		{
-			"handle": "ontology\/descendants\/{Identifier}",
-			"comment": "Find all the terms descended from a given term. By default searches are conducted within the namespace of the given id.",
+			"handle": "ontology\/descendants\/{id}",
+			"comment": "Find all the terms descended from a given term. By default searches are conducted within the namespace of the given identifier.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1485,7 +1475,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1509,8 +1499,8 @@
 			]
 		},
 		{
-			"handle": "ontology\/Identifier\/{Identifier}",
-			"comment": "Search for an ontological term by its namespaced id.",
+			"handle": "ontology\/id\/{id}",
+			"comment": "Search for an ontological term by its namespaced identifier.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1520,7 +1510,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1535,7 +1525,7 @@
 		},
 		{
 			"handle": "ontology\/name\/{name}",
-			"comment": "Search for an ontological term by its namespaced id.",
+			"comment": "Search for an ontological term by its namespaced identifier.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1545,7 +1535,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "NAME",
+						"term": "Name",
 						"uri": "http:\/\/edamontology.org\/data_2099"
 					}
 				}
@@ -1559,7 +1549,7 @@
 			]
 		},
 		{
-			"handle": "taxonomy\/classification\/{Identifier}",
+			"handle": "taxonomy\/classification\/{id}",
 			"comment": "Return the taxonomic classification of a taxon node.",
 			"operation": [
 				{
@@ -1570,7 +1560,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1584,8 +1574,8 @@
 			]
 		},
 		{
-			"handle": "taxonomy\/Identifier\/{Identifier}",
-			"comment": "Search for a taxonomic term by its id or name.",
+			"handle": "taxonomy\/id\/{id}",
+			"comment": "Search for a taxonomic term by its identifier or name.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1595,7 +1585,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1610,7 +1600,7 @@
 		},
 		{
 			"handle": "taxonomy\/name\/{name}",
-			"comment": "Search for a taxonomic Identifier by a non-scientific name.",
+			"comment": "Search for a taxonomic id by a non-scientific name.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1620,7 +1610,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "NAME",
+						"term": "Name",
 						"uri": "http:\/\/edamontology.org\/data_2099"
 					}
 				}
@@ -1634,8 +1624,8 @@
 			]
 		},
 		{
-			"handle": "overlap\/Identifier\/{Identifier}",
-			"comment": "Retrieves features (e.g. genes, transcripts, variants and more) that overlap a region defined by the given id.",
+			"handle": "overlap\/id\/{id}",
+			"comment": "Retrieves features (e.g. genes, transcripts, variants and more) that overlap a region defined by the given identifier.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1645,7 +1635,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
@@ -1675,7 +1665,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				},
@@ -1699,8 +1689,8 @@
 			]
 		},
 		{
-			"handle": "overlap\/translation\/{Identifier}",
-			"comment": "Retrieve features related to a specific Translation as described by its stable Identifier (e.g. domains, variants).",
+			"handle": "overlap\/translation\/{id}",
+			"comment": "Retrieve features related to a specific Translation as described by its stable ID (e.g. domains, variants).",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1710,7 +1700,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1735,13 +1725,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "Accession",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1766,13 +1756,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "KEYWORD",
+						"term": "Keyword",
 						"uri": "http:\/\/edamontology.org\/data_0968"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1786,8 +1776,8 @@
 			]
 		},
 		{
-			"handle": "regulatory\/{species}\/{Identifier}",
-			"comment": "Returns a RegulatoryFeature given its stable Identifier (e.g. ENSR00000099113).",
+			"handle": "regulatory\/{species}\/{id}",
+			"comment": "Returns a RegulatoryFeature given its stable ID (e.g. ENSR00000099113).",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1797,13 +1787,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1817,8 +1807,8 @@
 			]
 		},
 		{
-			"handle": "sequence\/Identifier\/{Identifier}",
-			"comment": "Request multiple types of sequence by stable id. Supports feature masking and expand options.",
+			"handle": "sequence\/id\/{id}",
+			"comment": "Request multiple types of sequence by stable identifier. Supports feature masking and expand options.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -1828,7 +1818,7 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				}
@@ -1858,7 +1848,7 @@
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1872,7 +1862,7 @@
 			]
 		},
 		{
-			"handle": "transcript_haplotypes\/{species}\/{Identifier}",
+			"handle": "transcript_haplotypes\/{species}\/{id}",
 			"comment": "Computes observed transcript haplotype sequences based on phased genotype data.",
 			"operation": [
 				{
@@ -1883,13 +1873,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1903,7 +1893,7 @@
 			]
 		},
 		{
-			"handle": "vep\/{species}\/Identifier\/{Identifier}",
+			"handle": "vep\/{species}\/id\/{id}",
 			"comment": "Fetch variant consequences based on a HGVS notation.",
 			"operation": [
 				{
@@ -1914,13 +1904,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1945,8 +1935,8 @@
 			"input": [
 				{
 					"data": {
-						"term": "NAME",
-						"uri": " http:\/\/edamontology.org\/data_2099"
+						"term": "Name",
+						"uri": "http:\/\/edamontology.org\/data_2099"
 					}
 				},
 				{
@@ -1956,7 +1946,7 @@
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -1986,7 +1976,7 @@
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
@@ -2000,8 +1990,8 @@
 			]
 		},
 		{
-			"handle": "variation\/{species}\/{Identifier}",
-			"comment": "Uses a variant id (e.g. rsID) to return the variation features including optional genotype, phenotype and population data.",
+			"handle": "variation\/{species}\/{id}",
+			"comment": "Uses a variant identifier (e.g. rsID) to return the variation features including optional genotype, phenotype and population data.",
 			"operation": [
 				{
 					"term": "Data retrieval",
@@ -2011,13 +2001,13 @@
 			"input": [
 				{
 					"data": {
-						"term": "Identifier",
+						"term": "identifier",
 						"uri": "http:\/\/edamontology.org\/data_0842"
 					}
 				},
 				{
 					"data": {
-						"term": "SPECIES NAME",
+						"term": "Species name",
 						"uri": "http:\/\/edamontology.org\/data_1045"
 					}
 				}
